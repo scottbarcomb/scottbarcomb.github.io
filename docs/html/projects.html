@@ -15,16 +15,137 @@
 
         <section class="main">
         <h1>Projects</h1>
+
         <article>
-        <h3><abbr title="High-Performance Computing">HPC</abbr> model fine-tuning project</h3>
-        <p><i>placeholder</i></p>
+        <h2>Distributed Fine-Tuning of an 8B Language Model</h2>
+        <h3>Project Overview</h3>
+        <p>
+            This project investigated the performance characteristics of distributed training for a large-scale
+            model (eight billion parameters) on a university HPC cluster equipped with a node containing
+            two NVIDIA A100 GPUs. The focus of this project was on systems-level behavior: GPU utilization,
+            communication overhead, memory footprint, and scalability under different distributed distributed
+            training strategies.
+        </p>
+        <h3>Technical Focus</h3>
+        <p>I evaluated and compared:</p>
+        <ul>
+            <li>DeepSpeed ZeRO-2 vs ZeRO-3</li>
+            <li>FP16 vs BF16 precision</li>
+            <li>Gradient accumulation strategies</li>
+            <li>Sequence length scaling</li>
+            <li>Batch size effects</li>
+            <li>Activation checkpointing</li>
+            <li>DataLoader worker configurations</li>
+        </ul>
+        <p>To understand performance bottlenecks, I collected:</p>
+        <ul>
+            <li>PyTorch Profiler traces</li>
+            <li>CUDA stream timelines</li>
+            <li>
+                <abbr title="NVIDIA Collective Communications Library">NCCL</abbr>
+                communication traces (AllGather, reduction ops)
+            </li>
+            <li>Device-to-device memory copy patterns</li>
+            <li>GPU utilization metrics and throughput</li>
+        </ul>
+        <h3>Key Engineering Questions</h3>
+        <p>In the evaluation of my work, certain questions were asked:</p>
+        <ul>
+            <li>Where does scaling break down under ZeRO-3?</li>
+            <li>How significant is communication overhead compared to compute?</li>
+            <li>How does memory fragmentation affect achievable batch size?</li>
+            <li>What trade-offs are there between memory savings and training throughput?</li>
+        </ul>
+        <h3>Outcome</h3>
+        <p>
+            The project produced a performance-focused evaluation of distributed model training under
+            limited GPU resources. The report, in particular, highlighted:
+        </p>
+        <ul>
+            <li>The communication cost of parameter sharding</li>
+            <li>The runtime implications of different training modes</li>
+            <li>The non-linear interaction between gradient accumulation and GPU utilization</li>
+        </ul>
+        <p>
+            This work was presented to the high-performance computing research group at the University of Basel
+            in Basel, Switzerland. <a href="https://hpc.dmi.unibas.ch/" target="_blank"><i>Their homepage.</i></a>
+        </p>
+        <h3>Technologies</h3>
+        <ul>
+            <li>PyTorch</li>
+            <li>Microsoft DeepSpeed (ZeRO-2 / ZeRO-3)</li>
+            <li>CUDA / NCCL</li>
+            <li>Slurm</li>
+            <li>NVIDIA A100 GPUs</li>
+            <li>Python</li>
+        </ul>
         </article>
+
         <hr>
+
         <article>
-        <h3>Graph algorithms project</h3>
-        <p><i>placeholder</i></p>
+        <h2>Shortest Path Algorithms on Social and Grid Graphs</h3>
+        <h3>Project Overview</h3>
+        <p>
+            This project analyzed classical shortest-path algorithms under varying graph structures to understand
+            how topology and heuristic design influence runtime performance.
+            <br>
+            The study compared:
+        </p>
+        <ul>
+            <li>Breadth-First Search (BFS)</li>
+            <li>Dijkstra's Algorithm</li>
+            <li>A* Search (with and without learned heuristics)</li>
+        </ul>
+        <p>Experiments were conducted on:</p>
+        <ul>
+            <li>
+                Large real-world
+                <a href="https://snap.stanford.edu/data/" target="_blank" title="Stanford Large Network Dataset Collection">SNAP</a>
+                social network datasets
+            </li>
+            <li>Structured grid graphs with blocked and unblocked configurations</li>
+        </ul>
+        <h3>Technical Focus</h3>
+        <p>This project focused on:</p>
+        <ul>
+            <li>Runtime scaling with graph size</li>
+            <li>Priority queue overhead in Dijkstra vs BFS</li>
+            <li>Heuristic effectiveness in A*</li>
+            <li>Impact of graph density and clustering</li>
+            <li>Effects of obstacle layouts in grid graphs</li>
+        </ul>
+        <p>
+            For A*, I explored various types of heuristics, including classical geometric and more modern embedding-based approaches
+            (e.g., Node2Vec-style features).
+        </p>
+        <h3>Key Engineering Questions</h3>
+        <ul>
+            <li>When does A* outperform Dijkstra?</li>
+            <li>How does graph structure effect algorithm exploration?</li>
+            <li>What is the runtime cost of priority queue ops?</li>
+            <li>How do embedding-based heuristics compare to classical ones?</li>
+        </ul>
+        <h3>Outcome</h3>
+        <p>This project demonstrated that graph topology significantly alters algorithm behavior:</p>
+        <ul>
+            <li>On sparse social graphs, structural properties affect algorithm branching patterns</li>
+            <li>In grid graphs, heuristic quality strongly influences search efficiency</li>
+        </ul>
+        <!-- Add link to portfolio -->
+        <p>This project can be found here.</p>
+        <h3>Technologies</h3>
+        <ul>
+            <li>C#</li>
+            <li>SNAP datasets</li>
+            <li>Custom benchmarking framework</li>
+            <li>Priority queue implementation</li>
+            <li>Graph embedding experiments</li>
+        </ul>
         </article>
+
         <hr>
+
         <article>
         <h3>Multiprocess performance analysis</h3>
         <p><i>placeholder</i></p>
