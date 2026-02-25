@@ -15,9 +15,10 @@
 
         <section class="main">
         <h1>Projects</h1>
+        <hr>
 
         <article>
-        <h2>Distributed Fine-Tuning of an 8B Language Model</h2>
+        <h1>Distributed Fine-Tuning of an 8B Language Model</h2>
         <h3>Project Overview</h3>
         <p>
             This project investigated the performance characteristics of distributed training for a large-scale
@@ -84,7 +85,7 @@
         <hr>
 
         <article>
-        <h2>Shortest Path Algorithms on Social and Grid Graphs</h3>
+        <h1>Shortest Path Algorithms on Social and Grid Graphs</h3>
         <h3>Project Overview</h3>
         <p>
             This project analyzed classical shortest-path algorithms under varying graph structures to understand
@@ -147,14 +148,149 @@
         <hr>
 
         <article>
-        <h3>Multiprocess performance analysis</h3>
-        <p><i>placeholder</i></p>
+        <h1>Systems Engineering Foundations</h1>
+        <h2>Distributed Systems Implementation</h2>
+        <h3>Project Overview</h3>
+        <p>
+            This work focused on implementing core distributed systems mechanisms from first
+            principles, emphasizing correctness, coordination, and consistency across nodes.
+        </p>
+        <h3>Homomorphic Cryptosystem (Python)</h3>
+        <p>
+            I implemented a basic homomorphic encryption scheme with test cases verifying
+            correctness of encrypted-domain operations.
+            <br>
+            Focus:
+        </p>
+        <ul>
+            <li>Cryptographic correctness</li>
+            <li>Algebraic properties under correction</li>
+            <li>Verification through systematic test construction</li>
+        </ul>
+        <p>
+            This project strengthened my reasoning about distributed, secure systems.
+        </p>
+        <h3>Chord Peer-to-Peer Distributed Hash Table (Java)</h3>
+        <p>I built a functioning Chord-based DHT supporting:</p>
+        <ul>
+            <li>Node join/leave</li>
+            <li>Finger table maintenance</li>
+            <li>Consistent hashing</li>
+            <li>Key lookup routing</li>
+        </ul>
+        <p>Focus:</p>
+        <ul>
+            <li>Overlay network structure</li>
+            <li>Fault-tolerant key routing</li>
+            <li>Distributed state consistency</li>
+        </ul>
+        <p>
+            This required paying careful attention to edge cases around stabilization
+            and pointer correctness.
+        </p>
+        <h3>Distributed Transaction System (Java, Oracle JDBC Framework)</h3>
+        <p>
+            I implemented transaction coordination atop a provided JDBC-based framework.
+            <br>
+            Focus:
+        </p>
+        <ul>
+            <li>Transaction ordering</li>
+            <li>Concurrency handling</li>
+            <li>Consistency guarantees</li>
+            <li>Failure scenarios</li>
+        </ul>
+        <p>The emphasis here was understanding tradeoffs between isolation, coordination, and correctness.</p>
+        <h3>Vector Clock Implementation (Python)</h3>
+        <p>Implemented vector clocks to reason about:</p>
+        <ul>
+            <li>Partial ordering</li>
+            <li>Causality</li>
+            <li>Concurrent events</li>
+        </ul>
+        <br>
+        <h2>High Performance Computing & Parallel Systems</h2>
+        <h3>Project Overview</h3>
+        <p>
+            This project focused on performance engineering and parallel scalability across CPU and GPU
+            systems on a university cluster environment.
+        </p>
+        <h3>Cache-Aware Matrix Multiplication (C)</h3>
+        <p>Implemented memory-optimized matrix multiplication, exploring:</p>
+        <ul>
+            <li>Loop reordering for spatial locality</li>
+            <li>[N x N] contiguous allocation vs pointer-of-pointers layouts</li>
+            <li>Auto-vectorization behavior</li>
+            <li>Cache hierarchy effects</li>
+        </ul>
+        <p>
+            This experiment measured the performance impact of memory access patterns and
+            analyzed compiler optimization techniques.
+        </p>
+        <h3>OpenMP & MPI Parallel Programming</h3>
+        <p>I developed multi-threaded and multi-process programs to explore:</p>
+        <ul>
+            <li>Work sharing</li>
+            <li>Synchronization Costs</li>
+            <li>Rank-based communication</li>
+            <li>Scalability limits</li>
+        </ul>
+        <p>This work included scheduling strategies for sparse matrix multiplication to study load imbalance.</p>
+        <h3>CUDA Heat Diffusion Acceleration</h3>
+        <p>I implemented CUDA kernels to accelerate a sequential heat-diffusion simultion, focusing on:</p>
+        <ul>
+            <li>Thread/block configuration</li>
+            <li>Memory access coalescing</li>
+            <li>Device-host transfer overhead</li>
+            <li>GPU utilization tradeofss</li>
+        </ul>
+        <h3>Directive-Based Acceleration (OpenACC / OpenMP)</h3>
+        <p>
+            I accelerated matrix multiplication using compiler directives and compared performance
+            against manual parallelization implementations. The key focus of this work was to explore
+            tradeoffs between abstraction and performance.
+        </p>
+        <h3>Load Balancing in Sparse Matrix Multiplication</h3>
+        <p>I investigated static vs dynamic scheduling in OpenMP and MPI for irregular workloads, measuring:</p>
+        <ul>
+            <li>Thread imbalance</li>
+            <li>Idle time</li>
+            <li>Scalability under skewed data dsitributions</li>
+        </ul>
+        <h3>Score-P Instrumentation & Trace Analysis</h3>
+        <p>
+            Instrumented C code running with 16 threads using Score-P and analyzed trace files to identify
+            performance bottlenecks.
+            <br>
+            Focus:
+        </p>
+        <ul>
+            <li>Critical section contention</li>
+            <li>Imbalance detection</li>
+            <li>Runtime overhead interpretation</li>
+        </ul>
+        <p>I refactored the code based on this trace analysis to improve performance.</p>
+        <h3>Algorithm-Based Fault Tolerance (ABFT)</h3>
+        <p>Implemented ABFT-style fault tolerance for matrix multiplication, focusing on:</p>
+        <ul>
+            <li>Checksum encoding</li>
+            <li>Error detection during computation</li>
+            <li>Resilience in numerical workloads</li>
+        </ul>
+        <h3>Reproducibility Study</h3>
+        <p>
+            Reproduced another student's experiment and documented the information required to achieve reproducibility.
+            <br>
+            Focus:
+        </p>
+        <ul>
+            <li>Experimental rigor</li>
+            <li>Environment documentation</li>
+            <li>Dependency clarity</li>
+            <li>Paramater transparency</li>
+        </ul>
         </article>
-        <hr>
-        <article>
-        <h3>Creative project</h3>
-        <p><i>placeholder</i></p>
-        </article>
+
         </section>
     </body>
 </html>
