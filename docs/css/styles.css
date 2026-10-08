@@ -25,9 +25,9 @@ article {
     margin-bottom: 60px;
 }
 
-h1 { font-size: 2rem; }
-h2 { margin-top: 1.5rem; }
-h3 { color: #444; }
+h1 { font-size: 2rem; font-family: sans-serif; }
+h2 { margin-top: 1.5rem; font-family: sans-serif; }
+h3 { color: #444; font-family: sans-serif; }
 
 .main {
     max-width: 900px;

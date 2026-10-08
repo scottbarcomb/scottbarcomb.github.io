@@ -10,7 +10,8 @@
     <body>
         <nav>
             <a href="../index.html">Home</a>
-            <a href="bio.html">What I Care About</a>
+            <a style="background-color: #111111" href="projects.html">Projects</a>
+            <a href="bio.html">What Drives Me</a>
         </nav>
 
         <section class="main">
@@ -21,28 +22,34 @@
         <h1>Distributed Fine-Tuning of an 8B Model</h2>
         <h3>Summary</h3>
         <p>
-            Profiled and optimized distributed training of an 8B-parameter transformer on dual NVIDIA
+            Profiled and optimized distributed training of an 8B-parameter transformer model on dual NVIDIA
             A100 GPUs, focusing on communication overhead, memory fragmentation, and scaling limits
             under constrained hardware.
+            <br>
+            <br>
+            <a href="../pdf/scott_barcomb_msc_project.pdf" target="_blank">Project Report</a>
+            <br>
+            <a href="https://github.com/scottbarcomb/Distributed-Training-Performance-Analysis" target="_blank">Project GitHub</a>
         </p>
         <h3>Key Contributions</h3>
         <ul>
             <li>Analyzed ZeRO-2 vs ZeRO-3 communication overhead</li>
             <li>Identified scaling bottlenecks via NCCL trace analysis</li>
-            <li>Quantified memory fragmentation impact on batch sizee</li>
-            <li>Improved GPU utilization through configuratin tuning</li>
+            <li>Quantified memory fragmentation impact on batch size</li>
+            <li>Improved GPU utilization through configuration tuning</li>
         </ul>
         <h3>Impact</h3>
         <ul>
             <li>Demonstrated tradeoffs between parameter sharding and throughput</li>
-            <li>Presented findings to the University of Basel HPC research group</li>
+            <li>Presented findings to the University of Basel HPC research group (<a style="font-style: italic;" href="https://hpc.dmi.unibas.ch/" target="_blank">Their homepage</a>)</li>
         </ul>
-        <h3 style="margin-bottom: 2px;">Tech</h3>
+        <h3 style="margin-bottom: 2px;">Technologies</h3>
         <ul style="list-style-type: none; margin-top: 2px;">
+            <li style="float: left; padding-right: 16px;">Python</li>
             <li style="float: left; padding-right: 16px;">PyTorch</li>
             <li style="float: left; padding-right: 16px;">DeepSpeed</li>
             <li style="float: left; padding-right: 16px;">CUDA</li>
-            <li style="float: left; padding-right: 16px;">NCCL</li>
+            <li style="float: left; padding-right: 16px;"><abbr title="NVIDIA Collective Communications Library">NCCL</abbr></li>
             <li style="float: left; padding-right: 16px;">Slurm</li>
             <li>A100 GPUs</li>
         </ul>
@@ -122,7 +129,7 @@
             principles, emphasizing correctness, coordination, and consistency across nodes.
         </p>
         <ul>
-            <li>Implemented Chord DHT (Java) wiht node join/leave and stabilization</li>
+            <li>Implemented Chord DHT (Java) with node join/leave and stabilization</li>
             <li>Built distributed transaction coordinator over JDBC framework</li>
             <li>Implemented vector clocks for causal ordering</li>
             <li>Developed homomorphic cryptosystem with correctness tests</li>
