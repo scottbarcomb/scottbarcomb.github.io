@@ -43,7 +43,7 @@
             <li>Demonstrated tradeoffs between parameter sharding and throughput</li>
             <li>Presented findings to the University of Basel HPC research group (<a style="font-style: italic;" href="https://hpc.dmi.unibas.ch/" target="_blank">Their homepage</a>)</li>
         </ul>
-        <h3 style="margin-bottom: 2px;">Technologies</h3>
+        <h3 style="margin-bottom: 10px;">Technologies</h3>
         <ul style="list-style-type: none; margin-top: 2px;">
             <li style="float: left; padding-right: 16px;">Python</li>
             <li style="float: left; padding-right: 16px;">PyTorch</li>
@@ -61,67 +61,32 @@
         <h1>Shortest Path Algorithms on Social and Grid Graphs</h3>
         <h3>Project Overview</h3>
         <p>
-            This project analyzed classical shortest-path algorithms under varying graph structures to understand
-            how topology and heuristic design influence runtime performance.
+            Compared Breadth-First Search, Dijkstra's algorithm, and A* with classical and embedding-based heuristics across
+            real-world social networks and grid graphs. Benchmarked how graph topology, density, and heuristic quality
+            affect search performance.
             <br>
-            The study compared:
+            <br>
+            <a href="../pdf/Barcomb_Scott_Shortest_Paths.pdf" target="_blank">Project Report</a>
+            <br>
+            <a href="https://github.com/scottbarcomb/ShortestPaths" target="_blank">Project GitHub</a>
         </p>
+        <h3>Key Findings</h3>
         <ul>
-            <li>Breadth-First Search (BFS)</li>
-            <li>Dijkstra's Algorithm</li>
-            <li>A* Search (with and without learned heuristics)</li>
+            <li>Graph structure influences algorithm exploration and runtime</li>
+            <li>Heuristic quality strongly affects A* efficiency on grid graphs</li>
         </ul>
-        <p>Experiments were conducted on:</p>
-        <ul>
-            <li>
-                Large real-world
-                <a href="https://snap.stanford.edu/data/" target="_blank" title="Stanford Large Network Dataset Collection">SNAP</a>
-                social network datasets
-            </li>
-            <li>Structured grid graphs with blocked and unblocked configurations</li>
-        </ul>
-        <h3>Technical Focus</h3>
-        <p>This project focused on:</p>
-        <ul>
-            <li>Runtime scaling with graph size</li>
-            <li>Priority queue overhead in Dijkstra vs BFS</li>
-            <li>Heuristic effectiveness in A*</li>
-            <li>Impact of graph density and clustering</li>
-            <li>Effects of obstacle layouts in grid graphs</li>
-        </ul>
-        <p>
-            For A*, I explored various types of heuristics, including classical geometric and more modern embedding-based approaches
-            (e.g., Node2Vec-style features).
-        </p>
-        <h3>Key Engineering Questions</h3>
-        <ul>
-            <li>When does A* outperform Dijkstra?</li>
-            <li>How does graph structure effect algorithm exploration?</li>
-            <li>What is the runtime cost of priority queue ops?</li>
-            <li>How do embedding-based heuristics compare to classical ones?</li>
-        </ul>
-        <h3>Outcome</h3>
-        <p>This project demonstrated that graph topology significantly alters algorithm behavior:</p>
-        <ul>
-            <li>On sparse social graphs, structural properties affect algorithm branching patterns</li>
-            <li>In grid graphs, heuristic quality strongly influences search efficiency</li>
-        </ul>
-        <!-- Add link to portfolio -->
-        <p>This project can be found here.</p>
-        <h3>Technologies</h3>
-        <ul>
-            <li>C#</li>
-            <li>SNAP datasets</li>
+        <h3 style="margin-bottom: 10px;">Technologies</h3>
+        <ul style="list-style-type: none; margin-top: 2px;">
+            <li style="float: left; padding-right: 16px;">C#</li>
+            <li style="float: left; padding-right: 16px;">SNAP datasets</li>
             <li>Custom benchmarking framework</li>
-            <li>Priority queue implementation</li>
-            <li>Graph embedding experiments</li>
         </ul>
         </article>
 
         <hr>
 
         <article>
-        <h1>Selected Systems Projects</h1>
+        <h1>Selected Systems Projects*</h1>
         <h2>Distributed Systems Implementation</h2>
         <h3>Project Overview</h3>
         <p>
@@ -150,8 +115,20 @@
             <li>Load balancing experiments for sparse workloads</li>
         </ul>
         <p><b>Focus:</b> scalability, memory locality, imbalance detection, GPU utilization</p>
+        <br>
+        <p>
+            * These projects were completed as assigned coursework for a graduate computer science program.
+            To prevent potential academic dishonesty by publishing answers online, the GitHub repositories
+            for these projects are not made public. I am happy to share links to them, however.
+        </p>
         </article>
 
         </section>
+
+        <footer style="font-size: 85%; text-align: center;">
+        <p><a href="https://github.com/scottbarcomb" target="_blank" class="github">My GitHub</a></p>
+        <br>
+        <p><a href="mailto:scottiebar@icloud.com">scottiebar@icloud.com</a></p>
+        </footer>
     </body>
 </html>
