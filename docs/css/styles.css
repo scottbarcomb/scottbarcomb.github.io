@@ -21,8 +21,17 @@ nav a:hover {
     background-color: #111111;
 }
 
+article {
+    margin-bottom: 60px;
+}
+
+h1 { font-size: 2rem; }
+h2 { margin-top: 1.5rem; }
+h3 { color: #444; }
+
 .main {
-    margin:80px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .github {

@@ -18,67 +18,33 @@
         <hr>
 
         <article>
-        <h1>Distributed Fine-Tuning of an 8B Language Model</h2>
-        <h3>Project Overview</h3>
+        <h1>Distributed Fine-Tuning of an 8B Model</h2>
+        <h3>Summary</h3>
         <p>
-            This project investigated the performance characteristics of distributed training for a large-scale
-            model (eight billion parameters) on a university HPC cluster equipped with a node containing
-            two NVIDIA A100 GPUs. The focus of this project was on systems-level behavior: GPU utilization,
-            communication overhead, memory footprint, and scalability under different distributed distributed
-            training strategies.
+            Profiled and optimized distributed training of an 8B-parameter transformer on dual NVIDIA
+            A100 GPUs, focusing on communication overhead, memory fragmentation, and scaling limits
+            under constrained hardware.
         </p>
-        <h3>Technical Focus</h3>
-        <p>I evaluated and compared:</p>
+        <h3>Key Contributions</h3>
         <ul>
-            <li>DeepSpeed ZeRO-2 vs ZeRO-3</li>
-            <li>FP16 vs BF16 precision</li>
-            <li>Gradient accumulation strategies</li>
-            <li>Sequence length scaling</li>
-            <li>Batch size effects</li>
-            <li>Activation checkpointing</li>
-            <li>DataLoader worker configurations</li>
+            <li>Analyzed ZeRO-2 vs ZeRO-3 communication overhead</li>
+            <li>Identified scaling bottlenecks via NCCL trace analysis</li>
+            <li>Quantified memory fragmentation impact on batch sizee</li>
+            <li>Improved GPU utilization through configuratin tuning</li>
         </ul>
-        <p>To understand performance bottlenecks, I collected:</p>
+        <h3>Impact</h3>
         <ul>
-            <li>PyTorch Profiler traces</li>
-            <li>CUDA stream timelines</li>
-            <li>
-                <abbr title="NVIDIA Collective Communications Library">NCCL</abbr>
-                communication traces (AllGather, reduction ops)
-            </li>
-            <li>Device-to-device memory copy patterns</li>
-            <li>GPU utilization metrics and throughput</li>
+            <li>Demonstrated tradeoffs between parameter sharding and throughput</li>
+            <li>Presented findings to the University of Basel HPC research group</li>
         </ul>
-        <h3>Key Engineering Questions</h3>
-        <p>In the evaluation of my work, certain questions were asked:</p>
-        <ul>
-            <li>Where does scaling break down under ZeRO-3?</li>
-            <li>How significant is communication overhead compared to compute?</li>
-            <li>How does memory fragmentation affect achievable batch size?</li>
-            <li>What trade-offs are there between memory savings and training throughput?</li>
-        </ul>
-        <h3>Outcome</h3>
-        <p>
-            The project produced a performance-focused evaluation of distributed model training under
-            limited GPU resources. The report, in particular, highlighted:
-        </p>
-        <ul>
-            <li>The communication cost of parameter sharding</li>
-            <li>The runtime implications of different training modes</li>
-            <li>The non-linear interaction between gradient accumulation and GPU utilization</li>
-        </ul>
-        <p>
-            This work was presented to the high-performance computing research group at the University of Basel
-            in Basel, Switzerland. <a href="https://hpc.dmi.unibas.ch/" target="_blank"><i>Their homepage.</i></a>
-        </p>
-        <h3>Technologies</h3>
-        <ul>
-            <li>PyTorch</li>
-            <li>Microsoft DeepSpeed (ZeRO-2 / ZeRO-3)</li>
-            <li>CUDA / NCCL</li>
-            <li>Slurm</li>
-            <li>NVIDIA A100 GPUs</li>
-            <li>Python</li>
+        <h3 style="margin-bottom: 2px;">Tech</h3>
+        <ul style="list-style-type: none; margin-top: 2px;">
+            <li style="float: left; padding-right: 16px;">PyTorch</li>
+            <li style="float: left; padding-right: 16px;">DeepSpeed</li>
+            <li style="float: left; padding-right: 16px;">CUDA</li>
+            <li style="float: left; padding-right: 16px;">NCCL</li>
+            <li style="float: left; padding-right: 16px;">Slurm</li>
+            <li>A100 GPUs</li>
         </ul>
         </article>
 
@@ -148,147 +114,35 @@
         <hr>
 
         <article>
-        <h1>Systems Engineering Foundations</h1>
+        <h1>Selected Systems Projects</h1>
         <h2>Distributed Systems Implementation</h2>
         <h3>Project Overview</h3>
         <p>
             This work focused on implementing core distributed systems mechanisms from first
             principles, emphasizing correctness, coordination, and consistency across nodes.
         </p>
-        <h3>Homomorphic Cryptosystem (Python)</h3>
-        <p>
-            I implemented a basic homomorphic encryption scheme with test cases verifying
-            correctness of encrypted-domain operations.
-            <br>
-            Focus:
-        </p>
         <ul>
-            <li>Cryptographic correctness</li>
-            <li>Algebraic properties under correction</li>
-            <li>Verification through systematic test construction</li>
+            <li>Implemented Chord DHT (Java) wiht node join/leave and stabilization</li>
+            <li>Built distributed transaction coordinator over JDBC framework</li>
+            <li>Implemented vector clocks for causal ordering</li>
+            <li>Developed homomorphic cryptosystem with correctness tests</li>
         </ul>
-        <p>
-            This project strengthened my reasoning about distributed, secure systems.
-        </p>
-        <h3>Chord Peer-to-Peer Distributed Hash Table (Java)</h3>
-        <p>I built a functioning Chord-based DHT supporting:</p>
-        <ul>
-            <li>Node join/leave</li>
-            <li>Finger table maintenance</li>
-            <li>Consistent hashing</li>
-            <li>Key lookup routing</li>
-        </ul>
-        <p>Focus:</p>
-        <ul>
-            <li>Overlay network structure</li>
-            <li>Fault-tolerant key routing</li>
-            <li>Distributed state consistency</li>
-        </ul>
-        <p>
-            This required paying careful attention to edge cases around stabilization
-            and pointer correctness.
-        </p>
-        <h3>Distributed Transaction System (Java, Oracle JDBC Framework)</h3>
-        <p>
-            I implemented transaction coordination atop a provided JDBC-based framework.
-            <br>
-            Focus:
-        </p>
-        <ul>
-            <li>Transaction ordering</li>
-            <li>Concurrency handling</li>
-            <li>Consistency guarantees</li>
-            <li>Failure scenarios</li>
-        </ul>
-        <p>The emphasis here was understanding tradeoffs between isolation, coordination, and correctness.</p>
-        <h3>Vector Clock Implementation (Python)</h3>
-        <p>Implemented vector clocks to reason about:</p>
-        <ul>
-            <li>Partial ordering</li>
-            <li>Causality</li>
-            <li>Concurrent events</li>
-        </ul>
+        <p><b>Focus:</b> correctness, consistency, coordination, fault tolerance</p>
         <br>
-        <h2>High Performance Computing & Parallel Systems</h2>
+        <h2>Parallel & Performance Engineering</h2>
         <h3>Project Overview</h3>
         <p>
             This project focused on performance engineering and parallel scalability across CPU and GPU
             systems on a university cluster environment.
         </p>
-        <h3>Cache-Aware Matrix Multiplication (C)</h3>
-        <p>Implemented memory-optimized matrix multiplication, exploring:</p>
         <ul>
-            <li>Loop reordering for spatial locality</li>
-            <li>[N x N] contiguous allocation vs pointer-of-pointers layouts</li>
-            <li>Auto-vectorization behavior</li>
-            <li>Cache hierarchy effects</li>
+            <li>Cache-optimized matrix multiplication (C)</li>
+            <li>OpenMP & MPI parallel workloads</li>
+            <li>CUDA heat diffusion acceleration</li>
+            <li>Score-P instrumentation & trace-guided refactoring</li>
+            <li>Load balancing experiments for sparse workloads</li>
         </ul>
-        <p>
-            This experiment measured the performance impact of memory access patterns and
-            analyzed compiler optimization techniques.
-        </p>
-        <h3>OpenMP & MPI Parallel Programming</h3>
-        <p>I developed multi-threaded and multi-process programs to explore:</p>
-        <ul>
-            <li>Work sharing</li>
-            <li>Synchronization Costs</li>
-            <li>Rank-based communication</li>
-            <li>Scalability limits</li>
-        </ul>
-        <p>This work included scheduling strategies for sparse matrix multiplication to study load imbalance.</p>
-        <h3>CUDA Heat Diffusion Acceleration</h3>
-        <p>I implemented CUDA kernels to accelerate a sequential heat-diffusion simultion, focusing on:</p>
-        <ul>
-            <li>Thread/block configuration</li>
-            <li>Memory access coalescing</li>
-            <li>Device-host transfer overhead</li>
-            <li>GPU utilization tradeofss</li>
-        </ul>
-        <h3>Directive-Based Acceleration (OpenACC / OpenMP)</h3>
-        <p>
-            I accelerated matrix multiplication using compiler directives and compared performance
-            against manual parallelization implementations. The key focus of this work was to explore
-            tradeoffs between abstraction and performance.
-        </p>
-        <h3>Load Balancing in Sparse Matrix Multiplication</h3>
-        <p>I investigated static vs dynamic scheduling in OpenMP and MPI for irregular workloads, measuring:</p>
-        <ul>
-            <li>Thread imbalance</li>
-            <li>Idle time</li>
-            <li>Scalability under skewed data dsitributions</li>
-        </ul>
-        <h3>Score-P Instrumentation & Trace Analysis</h3>
-        <p>
-            Instrumented C code running with 16 threads using Score-P and analyzed trace files to identify
-            performance bottlenecks.
-            <br>
-            Focus:
-        </p>
-        <ul>
-            <li>Critical section contention</li>
-            <li>Imbalance detection</li>
-            <li>Runtime overhead interpretation</li>
-        </ul>
-        <p>I refactored the code based on this trace analysis to improve performance.</p>
-        <h3>Algorithm-Based Fault Tolerance (ABFT)</h3>
-        <p>Implemented ABFT-style fault tolerance for matrix multiplication, focusing on:</p>
-        <ul>
-            <li>Checksum encoding</li>
-            <li>Error detection during computation</li>
-            <li>Resilience in numerical workloads</li>
-        </ul>
-        <h3>Reproducibility Study</h3>
-        <p>
-            Reproduced another student's experiment and documented the information required to achieve reproducibility.
-            <br>
-            Focus:
-        </p>
-        <ul>
-            <li>Experimental rigor</li>
-            <li>Environment documentation</li>
-            <li>Dependency clarity</li>
-            <li>Paramater transparency</li>
-        </ul>
+        <p><b>Focus:</b> scalability, memory locality, imbalance detection, GPU utilization</p>
         </article>
 
         </section>
